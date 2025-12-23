@@ -268,7 +268,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                     <p className="text-gray-600">Call us anytime for immediate service</p>
-                    <a href="tel:+973" className="text-cyan-600 hover:text-cyan-700 font-medium">+973 XXXX XXXX</a>
+                    <a href="tel:+973" className="text-cyan-600 hover:text-cyan-700 font-medium">+973 36616810</a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -278,7 +278,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">Send us your requirements</p>
-                    <a href="mailto:info@eastvenicesweetwater.com" className="text-cyan-600 hover:text-cyan-700 font-medium">info@eastvenicesweetwater.com</a>
+                    <a href="mailto:info@eastvenicesweetwater.com" className="text-cyan-600 hover:text-cyan-700 font-medium">eastvenice07@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
