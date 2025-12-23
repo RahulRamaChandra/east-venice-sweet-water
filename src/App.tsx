@@ -423,9 +423,7 @@ function App() {
                   className="w-14 h-14 rounded-lg object-contain bg-white"
                   loading="lazy"
                 />
-                <h1 className="text-2xl font-extrabold bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent">
-  East Venice Sweet Water
-</h1>
+                <h1 className="text-2xl font-extrabold bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent">East Venice Sweet Water</h1>
 
               </div>
               <p className="text-gray-400">
