@@ -420,10 +420,13 @@ function App() {
                 <img
                   src={logo}
                   alt="East Venice Sweet Water"
-                  className="w-10 h-10 rounded-lg object-contain bg-white"
+                  className="w-14 h-14 rounded-lg object-contain bg-white"
                   loading="lazy"
                 />
-                <h3 className="text-xl font-bold">East Venice Sweet Water</h3>
+                <h1 className="text-2xl font-extrabold bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent">
+  East Venice Sweet Water
+</h1>
+
               </div>
               <p className="text-gray-400">
                 Your trusted partner for sweet water supply across Bahrain. Quality service, every time.
