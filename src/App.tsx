@@ -416,16 +416,27 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center gap-3">
                 <img
                   src={logo}
-                  alt="East Venice Sweet Water"
-                  className="w-14 h-14 rounded-lg object-contain bg-white"
-                  loading="lazy"
+                  alt="East Venice Sweet Water logo"
+                  className="h-14 w-14 object-contain rounded-md bg-white p-1"
+                  loading="eager"
                 />
-                <h1 className="text-2xl font-extrabold bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent">East Venice Sweet Water</h1>
 
+                <h1
+                  className="
+                    text-2xl font-extrabold leading-tight
+                    bg-gradient-to-r
+                    from-cyan-500 via-blue-500 to-emerald-500
+                    bg-clip-text text-transparent
+                    whitespace-nowrap
+                  "
+                >
+                  East Venice Sweet Water
+                </h1>
               </div>
+
               <p className="text-gray-400">
                 Your trusted partner for sweet water supply across Bahrain. Quality service, every time.
               </p>
