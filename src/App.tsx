@@ -70,7 +70,7 @@ function App() {
             <img
               src={logo}
               alt="East Venice Sweet Water logo"
-              className="h-14 w-14 object-contain rounded-md bg-white p-1"
+              className="h-16 w-16 object-contain rounded-md bg-white p-1"
               loading="eager"
             />
 
