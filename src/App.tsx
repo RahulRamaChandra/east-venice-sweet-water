@@ -66,23 +66,14 @@ function App() {
     <div className="min-h-screen bg-white">
       <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <img
               src={logo}
               alt="East Venice Sweet Water"
-              className="w-14 h-14 rounded-lg object-contain bg-white p-1"
+              className="w-10 h-10 rounded-lg object-contain"
               loading="eager"
             />
-            <h1
-              className="
-                text-2xl md:text-3xl font-extrabold leading-tight
-                bg-gradient-to-r
-                from-cyan-500 via-blue-500 to-emerald-500
-                bg-clip-text text-transparent
-              "
-            >
-              East Venice Sweet Water
-            </h1>
+            <h1 className="text-2xl font-bold text-gray-900">East Venice Sweet Water</h1>
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#services" className="text-gray-700 hover:text-cyan-600 transition">Services</a>
