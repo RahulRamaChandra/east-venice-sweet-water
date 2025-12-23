@@ -69,11 +69,22 @@ function App() {
           <div className="flex items-center space-x-3">
             <img
               src={logo}
-              alt="East Venice Sweet Water"
-              className="w-10 h-10 rounded-lg object-contain"
+              alt="East Venice Sweet Water logo"
+              className="h-14 w-14 object-contain rounded-md bg-white p-1"
               loading="eager"
             />
-            <h1 className="text-2xl font-bold text-gray-900">East Venice Sweet Water</h1>
+
+            <h1
+              className="
+                text-2xl font-extrabold leading-tight
+                bg-gradient-to-r
+                from-cyan-500 via-blue-500 to-emerald-500
+                bg-clip-text text-transparent
+                whitespace-nowrap
+              "
+            >
+              East Venice Sweet Water
+            </h1>
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#services" className="text-gray-700 hover:text-cyan-600 transition">Services</a>
