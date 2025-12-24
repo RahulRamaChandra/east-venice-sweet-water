@@ -91,7 +91,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
+          <a href="#" className="flex items-center gap-3">
             <img
               src={logo}
               alt={`${BUSINESS_NAME} logo`}
@@ -101,8 +101,7 @@ function App() {
             <h1 className="text-2xl font-extrabold leading-tight bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent whitespace-nowrap">
               {BUSINESS_NAME}
             </h1>
-          </div>
-
+          </a>
           <nav className="hidden md:flex space-x-8">
             <a
               href="#services"
