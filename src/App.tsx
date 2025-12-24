@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { Droplets, Building2, Wrench, CheckCircle2, Phone, Mail, MapPin } from 'lucide-react';
 import logo from './assets/logo.jpeg';
 
+// --- Easy-to-edit business details (update these once) ---
+const BUSINESS_NAME = 'East Venice Sweet Water';
+const DISPLAY_PHONE = '+973 36616810';
+const PHONE_TEL = '+973 36616810'; // Use full international format, e.g. +973XXXXXXXX
+const EMAIL = 'eastvenice07@gmail.com';
+
 function App() {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,29 +20,30 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    // GitHub Pages is static hosting (no server). Instead of sending to a database,
-    // we open the user's email client with a pre-filled message.
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    // GitHub Pages is static hosting. Instead of sending to Supabase (backend),
+    // open the user's email client with a pre-filled message.
     try {
-      const subject = `Website Inquiry - East Venice Sweet Water (${formData.service_type})`;
-      const lines = [
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        `Phone: ${formData.phone}`,
-        `Company: ${formData.company || 'N/A'}`,
-        `Service Type: ${formData.service_type}`,
-        '',
-        'Message:',
-        formData.message || '(No message)'
-      ];
-      const body = lines.join('\n');
+      const subject = encodeURIComponent(`${BUSINESS_NAME} — Website Inquiry (${formData.service_type})`);
+      const body = encodeURIComponent(
+        [
+          `Name: ${formData.name}`,
+          `Email: ${formData.email}`,
+          `Phone: ${formData.phone}`,
+          `Company: ${formData.company || '-'}`,
+          `Service type: ${formData.service_type}`,
+          '',
+          'Message:',
+          formData.message || '-',
+        ].join('\n')
+      );
 
-      const mailto = `mailto:info@eastvenicesweetwater.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
+      // Using location.href keeps this dependency-free and works everywhere.
+      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
 
       setSubmitStatus('success');
       setFormData({
@@ -48,8 +55,8 @@ function App() {
         message: ''
       });
     } catch (err) {
-      console.error('Error preparing email:', err);
       setSubmitStatus('error');
+      console.error('Error preparing email:', err);
     } finally {
       setIsSubmitting(false);
     }
@@ -66,24 +73,15 @@ function App() {
     <div className="min-h-screen bg-white">
       <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center gap-3">
             <img
               src={logo}
-              alt="East Venice Sweet Water logo"
-              className="h-16 w-16 object-contain rounded-md bg-white p-1"
+              alt={`${BUSINESS_NAME} logo`}
+              className="h-14 w-14 object-contain rounded-md bg-white p-1"
               loading="eager"
             />
-
-            <h1
-              className="
-                text-2xl font-extrabold leading-tight
-                bg-gradient-to-r
-                from-cyan-500 via-blue-500 to-emerald-500
-                bg-clip-text text-transparent
-                whitespace-nowrap
-              "
-            >
-              East Venice Sweet Water
+            <h1 className="text-2xl font-extrabold leading-tight bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent whitespace-nowrap">
+              {BUSINESS_NAME}
             </h1>
           </div>
           <nav className="hidden md:flex space-x-8">
@@ -111,7 +109,7 @@ function App() {
                 <a href="#contact" className="bg-cyan-600 text-white px-8 py-4 rounded-lg hover:bg-cyan-700 transition font-semibold text-lg shadow-lg">
                   Request Service
                 </a>
-                <a href="tel:+973 36616810" className="bg-white text-cyan-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition font-semibold text-lg shadow-lg border-2 border-cyan-600">
+                <a href={`tel:${PHONE_TEL}`} className="bg-white text-cyan-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition font-semibold text-lg shadow-lg border-2 border-cyan-600">
                   Call Now
                 </a>
               </div>
@@ -279,7 +277,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                     <p className="text-gray-600">Call us anytime for immediate service</p>
-                    <a href="tel:+973 36616810" className="text-cyan-600 hover:text-cyan-700 font-medium">+973 36616810</a>
+                    <a href={`tel:${PHONE_TEL}`} className="text-cyan-600 hover:text-cyan-700 font-medium">{DISPLAY_PHONE}</a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -289,7 +287,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">Send us your requirements</p>
-                    <a href="mailto:info@eastvenicesweetwater.com" className="text-cyan-600 hover:text-cyan-700 font-medium">eastvenice07@gmail.com</a>
+                    <a href={`mailto:${EMAIL}`} className="text-cyan-600 hover:text-cyan-700 font-medium">{EMAIL}</a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -427,27 +425,17 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center gap-3">
-              <img
-                src={logo}
-                alt="East Venice Sweet Water logo"
-                className="h-14 w-14 object-contain rounded-md bg-white p-1"
-                loading="eager"
-              />
-
-              <h1
-                className="
-                  text-2xl font-extrabold leading-tight
-                  bg-gradient-to-r
-                  from-cyan-500 via-blue-500 to-emerald-500
-                  bg-clip-text text-transparent
-                  whitespace-nowrap
-                "
-              >
-                East Venice Sweet Water
-              </h1>
-            </div>
-
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={logo}
+                  alt={`${BUSINESS_NAME} logo`}
+                  className="h-10 w-10 object-contain rounded-md bg-white p-1"
+                  loading="lazy"
+                />
+                <h3 className="text-xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                  {BUSINESS_NAME}
+                </h3>
+              </div>
               <p className="text-gray-400">
                 Your trusted partner for sweet water supply across Bahrain. Quality service, every time.
               </p>
@@ -463,14 +451,14 @@ function App() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Phone: +973 36616810</li>
-                <li>Email: eastvenice07@gmail.com</li>
+                <li>Phone: {DISPLAY_PHONE}</li>
+                <li>Email: {EMAIL}</li>
                 <li>Serving all of Bahrain</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Eastvenice Sweetwater. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved.</p>
           </div>
         </div>
       </footer>
