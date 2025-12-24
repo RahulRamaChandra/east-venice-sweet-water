@@ -12,7 +12,7 @@ import logo from './assets/logo.jpeg';
 
 // --- Easy-to-edit business details (update these once) ---
 const BUSINESS_NAME = 'East Venice Sweet Water';
-const DISPLAY_PHONE = '+973 36616810';
+const DISPLAY_PHONE = '+973 3661681';
 const PHONE_TEL = '+97336616810'; // Use full international format, no spaces
 const EMAIL = 'eastvenice07@gmail.com';
 
