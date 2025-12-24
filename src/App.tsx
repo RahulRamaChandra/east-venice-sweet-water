@@ -12,7 +12,7 @@ import logo from './assets/logo.jpeg';
 
 // --- Easy-to-edit business details (update these once) ---
 const BUSINESS_NAME = 'East Venice Sweet Water';
-const DISPLAY_PHONE = '+973 3661681';
+const DISPLAY_PHONE = '+973 36616810';
 const PHONE_TEL = '+97336616810'; // Use full international format, no spaces
 const EMAIL = 'eastvenice07@gmail.com';
 
@@ -340,7 +340,7 @@ function App() {
         </div>
       </section>
 
-      <section id="contact" className="pt-12 pb-16 bg-white scroll-mt-32">
+      <section id="contact" className="pt-10 pb-16 sm:pt-12 sm:pb-20 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -396,7 +396,7 @@ function App() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl">
+            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl -mt-6">
               <form onSubmit={handleSubmit}>
                 <div className="space-y-6">
                   {/* Full Name */}
