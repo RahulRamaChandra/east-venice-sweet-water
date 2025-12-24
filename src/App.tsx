@@ -111,7 +111,7 @@ function App() {
                 <a href="#contact" className="bg-cyan-600 text-white px-8 py-4 rounded-lg hover:bg-cyan-700 transition font-semibold text-lg shadow-lg">
                   Request Service
                 </a>
-                <a href="tel:+973" className="bg-white text-cyan-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition font-semibold text-lg shadow-lg border-2 border-cyan-600">
+                <a href="tel:+973 36616810" className="bg-white text-cyan-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition font-semibold text-lg shadow-lg border-2 border-cyan-600">
                   Call Now
                 </a>
               </div>
@@ -279,7 +279,7 @@ function App() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                     <p className="text-gray-600">Call us anytime for immediate service</p>
-                    <a href="tel:+973" className="text-cyan-600 hover:text-cyan-700 font-medium">+973 36616810</a>
+                    <a href="tel:+973 36616810" className="text-cyan-600 hover:text-cyan-700 font-medium">+973 36616810</a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -463,8 +463,8 @@ function App() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Phone: +973 XXXX XXXX</li>
-                <li>Email: info@eastvenicesweetwater.com</li>
+                <li>Phone: +973 36616810</li>
+                <li>Email: eastvenice07@gmail.com</li>
                 <li>Serving all of Bahrain</li>
               </ul>
             </div>
